@@ -1,0 +1,33 @@
+{
+  "name": "stamp-evaluator",
+  "version": "1.0.0",
+  "description": "邮票扫描鉴定工具：齿孔度数、居中、刷色、水印自动分析与评审证书",
+  "type": "module",
+  "bin": {
+    "stamp-eval": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "fixtures": "tsx src/cli/index.ts generate-fixtures",
+    "analyze": "tsx src/cli/index.ts analyze",
+    "cert": "tsx src/cli/index.ts certificate",
+    "demo": "tsx src/cli/index.ts demo",
+    "test": "node --import tsx --test tests/pipeline.test.ts"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "jpeg-js": "^0.4.4",
+    "pdf-lib": "^1.17.1",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pngjs": "^6.0.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
